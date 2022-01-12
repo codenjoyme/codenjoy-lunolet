@@ -47,7 +47,7 @@ public class SmokeTest {
 
     @Test
     public void test() {
-        // about 3 sec
+        // about 2.7 sec
         int ticks = 1000;
 
         smoke.play(ticks, "SmokeTest.data",
