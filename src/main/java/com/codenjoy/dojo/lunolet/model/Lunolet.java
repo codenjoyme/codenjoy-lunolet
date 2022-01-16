@@ -25,11 +25,9 @@ package com.codenjoy.dojo.lunolet.model;
 
 import com.codenjoy.dojo.lunolet.services.GameSettings;
 import com.codenjoy.dojo.services.printer.BoardReader;
-import com.codenjoy.dojo.services.settings.SettingsReader;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.function.Supplier;
 
 public class Lunolet implements Field {
 
@@ -61,6 +59,11 @@ public class Lunolet implements Field {
             players.add(player);
         }
         player.newHero(this);
+    }
+
+    @Override
+    public int size() {
+        return 0;
     }
 
     @Override
