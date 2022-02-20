@@ -24,7 +24,6 @@ package com.codenjoy.dojo.lunolet.model;
 
 
 import com.codenjoy.dojo.lunolet.services.GameSettings;
-import com.codenjoy.dojo.services.printer.BoardReader;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -46,11 +45,6 @@ public class Lunolet implements Field {
         for (Player player : players) {
             player.getHero().tick();
         }
-    }
-
-    @Override
-    public BoardReader<Player> reader() {
-        return null; // do nothing, because this game use custom Printer
     }
 
     @Override
