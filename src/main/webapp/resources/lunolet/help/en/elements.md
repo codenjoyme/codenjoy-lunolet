@@ -3,4 +3,4 @@
 ## Symbol breakdown
 | Sprite | Code | Description |
 | -------- | -------- | -------- |
-|<img src="/codenjoy-contest/resources/lunolet/sprite/none.png" style="width:40px;" /> | `NONE(' ')` | There are no elements for this game. | 
+|<img src="/codenjoy-contest/resources/lunolet/sprite/none.png" style="height:100%;" /> | `NONE(' ')` | There are no elements for this game. | 
