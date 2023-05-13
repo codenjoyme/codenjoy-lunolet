@@ -15,8 +15,6 @@
     <properties>
         <module.name>lunolet</module.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     </properties>
 
     <repositories>
@@ -50,7 +48,7 @@
             <artifactId>commons-collections4</artifactId>
         </dependency>
         <dependency>
-           <groupId>org.apache.commons</groupId>
+            <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
@@ -82,47 +80,42 @@
                 <artifactId>buildnumber-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
+                <artifactId>exec-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>com.ruleoftech</groupId>
                 <artifactId>markdown-page-generator-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
             <!-- Generate lunolet-levels.html -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>${exec-maven-plugin.version}</version>
                 <executions>
                     <execution>
-                        <id>generate-levels-html</id>
-                        <phase>compile</phase>
+                        <id>[##6.2]-generate-levels</id>
                         <goals>
                             <goal>exec</goal>
                         </goals>
+                        <phase>process-classes</phase>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-classpath</argument>
+                                <classpath/>
+                                <argument>com.codenjoy.dojo.${module.name}.utility.PrintLevels</argument>
+                            </arguments>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <executable>java</executable>
-                    <arguments>
-                        <argument>-classpath</argument>
-                        <classpath/>
-                        <argument>com.codenjoy.dojo.${module.name}.utility.PrintLevels</argument>
-                    </arguments>
-                </configuration>
             </plugin>
         </plugins>
     </build>
