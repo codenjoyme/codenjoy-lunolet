@@ -25,6 +25,7 @@ package com.codenjoy.dojo.lunolet.utility;
 
 import com.codenjoy.dojo.lunolet.model.Level;
 import com.codenjoy.dojo.lunolet.model.LevelManager;
+import com.codenjoy.dojo.utils.FilePathUtils;
 
 import java.awt.geom.Point2D;
 import java.io.File;
@@ -42,7 +43,7 @@ public class PrintLevels {
 
     public static void main(String[] args) throws IOException {
         File file = new File(PATH);
-        if (!file.getAbsolutePath().replace('\\', '/').contains("games/lunolet")) {
+        if (!FilePathUtils.normalize(file.getAbsolutePath()).contains("games/lunolet")) {
             file = new File("./games/lunolet/" + PATH);
         }
         System.out.println(file.getAbsolutePath());
