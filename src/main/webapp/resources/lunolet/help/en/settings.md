@@ -1,4 +1,4 @@
-| Settings name | Action |
-|---------------|--------|
-| LANDED_SCORE | [Score] Landed score |
-| CRASHED_PENALTY | [Score] Crashed penalty |
+| Action | Settings name |
+|--------|---------------|
+| [Score] Landed score | LANDED_SCORE |
+| [Score] Crashed penalty | CRASHED_PENALTY |
